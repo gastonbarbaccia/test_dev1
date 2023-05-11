@@ -114,7 +114,7 @@ jobs:
 
   Import_SQL:
     runs-on: ubuntu-latest
-    name: MySQL Deploy Action
+    name: MySQL Deploy Staging
     needs: [dependency_check]
     steps:
       - name: Checkout

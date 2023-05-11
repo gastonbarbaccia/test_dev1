@@ -21,6 +21,10 @@ SET time_zone = "+00:00";
 -- Base de datos: ``
 --
 
+DROP DATABASE `u666073011_test_dev`;
+
+CREATE DATABASE `u666073011_test_dev`;
+
 -- --------------------------------------------------------
 
 --

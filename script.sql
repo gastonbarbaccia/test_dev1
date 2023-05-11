@@ -25,6 +25,8 @@ DROP DATABASE `u666073011_test_dev`;
 
 CREATE DATABASE `u666073011_test_dev`;
 
+USE `u666073011_test_dev`;
+
 -- --------------------------------------------------------
 
 --

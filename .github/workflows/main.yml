@@ -115,7 +115,7 @@ jobs:
   Import_SQL:
     runs-on: ubuntu-latest
     name: MySQL Deploy Action
-    needs: [sonarcloud,dependency_check]
+    needs: [dependency_check]
     steps:
       - name: Checkout
         uses: actions/checkout@v2

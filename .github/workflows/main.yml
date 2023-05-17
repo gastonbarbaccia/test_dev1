@@ -133,7 +133,6 @@ jobs:
     name: Deploy Staging
     if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
-    continue-on-error: true
     needs: [Import_SQL]
     environment: 
       name: staging

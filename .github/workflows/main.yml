@@ -112,26 +112,27 @@ jobs:
           name: Depcheck report
           path: ${{github.workspace}}/reports
 
-  #Import_SQL:
-   # runs-on: ubuntu-latest
-    #name: MySQL Deploy Action
-    #needs: [sonarcloud,dependency_check]
-    #steps:
-     # - name: Checkout
-      #  uses: actions/checkout@v2
-      #- uses: gtadam/mysql-deploy-action@v1
-       # with:
-        #    DATABASE_HOST: ${{ secrets.DATABASE_HOST }}
-         #   DATABASE_PORT: ${{ secrets.DATABASE_PORT }}
-          #  DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
-           # DATABASE_USERNAME: ${{ secrets.DATABASE_USERNAME }}
-            #DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
-            #DATABASE_SCRIPT: script.sql
+  Import_SQL1:
+    runs-on: ubuntu-latest
+    name: MySQL Deploy Action
+    needs: [sonarcloud,dependency_check]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: gtadam/mysql-deploy-action@v1
+        with:
+            DATABASE_HOST: ${{ secrets.DATABASE_HOST }}
+            DATABASE_PORT: ${{ secrets.DATABASE_PORT }}
+            DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
+            DATABASE_USERNAME: ${{ secrets.DATABASE_USERNAME }}
+            DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
+            DATABASE_SCRIPT: script.sql
             
   deploy_staging:
     name: Deploy Staging
     if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
+    continue-on-error: true
     needs: [Import_SQL]
     environment: 
       name: staging

@@ -112,7 +112,7 @@ jobs:
           name: Depcheck report
           path: ${{github.workspace}}/reports
 
-   Import_SQL:
+  Import_SQL:
     runs-on: ubuntu-latest
     name: MySQL Deploy Action
     needs: [sonarcloud,dependency_check]

@@ -112,7 +112,7 @@ jobs:
           name: Depcheck report
           path: ${{github.workspace}}/reports
 
-  Import_SQL1:
+  //* Import_SQL:
     runs-on: ubuntu-latest
     name: MySQL Deploy Action
     needs: [sonarcloud,dependency_check]
@@ -126,7 +126,7 @@ jobs:
             DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
             DATABASE_USERNAME: ${{ secrets.DATABASE_USERNAME }}
             DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
-            DATABASE_SCRIPT: script.sql
+            DATABASE_SCRIPT: script.sql *//
             
   deploy_staging:
     name: Deploy Staging

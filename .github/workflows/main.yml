@@ -132,7 +132,7 @@ jobs:
     name: Deploy Staging
     if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
-    #needs: [Import_SQL]
+    needs: [Import_SQL]
     environment: 
       name: staging
       #url:

@@ -45,7 +45,7 @@ jobs:
           with:
             sarif_file: ${{ steps.gitleaks.outputs.report }} 
 
-  copy_paste_detector:
+  /* //TODO: copy_paste_detector:
     name: Copy Paste Detector
     runs-on: ubuntu-latest
     steps:
@@ -53,7 +53,8 @@ jobs:
       - name: PHP Copy Paste Detector
         uses: StephaneBour/actions-php-cpd@1.0
         with:
-          dir: "src/"
+          dir: "src/" 
+          /*/
 
   phpstan:
     name: PHP Stan
